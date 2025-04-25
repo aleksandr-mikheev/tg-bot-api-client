@@ -1,0 +1,13 @@
+services:
+  php:
+    build:
+      context: docker/php
+    environment:
+      HISTFILE: /root/history/.history
+      ENV: /root/.bashrc
+    volumes:
+      - .:/var/www/html:cached
+      - php_history:/root/history
+
+volumes:
+  php_history: ~
